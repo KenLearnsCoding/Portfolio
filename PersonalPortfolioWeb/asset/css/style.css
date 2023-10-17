@@ -31,6 +31,7 @@ a {
 	gap: 25px;
     justify-content: space-between;
 	align-items: center;
+	z-index: 1;
 }
 
 img {
@@ -76,31 +77,58 @@ ul {
 	transform-origin: left;
 }
 
+
+
 .contentSection {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin: 5px;
     padding: 5px;
+	align-items: center;
  }
 
-.writtenContent {
+
+ .writtenContent {
     padding: 5px;
-    display: block;
-	width: 50%;
-}
+    width: 50%;
+    margin: 5px; /* Center the block horizontally */
+	height: 50%;
+ }
+
+
 
 .imgcontent{
 	position: relative; /* Make the container relative */
 	padding: 10px;
 	margin: 10px;
-	display: block;
+	display: flex;
 	justify-content: center;
-
+	z-index: 1;
 }
 
 .imgcontent img {
-	height: 70%;
-	width: auto;
+	height: 60%;
+	width: 60%;
+	justify-content: center;
+	z-index: 2;
+}
+
+.imgcontent::before{
+    position: absolute;
+    content: '';
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+	right: 20%;
+    background: linear-gradient(45deg, #aca7a7, #F4F5F5);
+	animation: object1 6s linear infinite;
+	z-index: 0;
+}
+
+@keyframes object1{
+    50%{
+        right: 10%;
+    }
 }
 
 
