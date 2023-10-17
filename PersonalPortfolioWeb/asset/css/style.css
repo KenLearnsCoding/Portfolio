@@ -163,9 +163,22 @@ ul {
     }
 }
 
-footer {
+.footerContent {
 	border-top: solid 1px black;
 	width: 100%;
+	display: flex;
+	height: 20%;
+	align-items: center;
+	justify-content: center;
+}
+.footerContent p {
+	margin: 10px;
+	padding: 10px;
+}
+
+.footerLinks {
+	margin: 10px;
+	padding: 10px;
 }
 
 
