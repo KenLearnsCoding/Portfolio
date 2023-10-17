@@ -9,7 +9,7 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #8BBD91;
-	height: 100vh;
+	height: 130vh;
 	display: grid;
 
 }
@@ -84,15 +84,48 @@ ul {
     justify-content: space-around;
     margin: 5px;
     padding: 5px;
-	align-items: center;
+	height: 70%;
  }
+
+.maincontent {
+	padding: 5px;
+	margin: 5px; /* Center the block horizontally */
+	height: 100%;
+	width: 50%;
+}
+
+.maincontent::before{
+	position: absolute;
+	content: '';
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+	left: 10%;
+	bottom: 10%;
+    background: linear-gradient(45deg, #aca7a7, #F4F5F5);
+	z-index: 0;
+}
 
 
  .writtenContent {
-    padding: 5px;
-    width: 50%;
-    margin: 5px; /* Center the block horizontally */
-	height: 50%;
+    justify-content: center;
+    height: 70%; 
+	z-index: 2;
+ }
+
+
+
+ .links {
+
+	padding: 5px;
+	width: 40%;
+	margin: 10px; /* Center the block horizontally */
+ }
+
+ .links ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
  }
 
 
@@ -103,14 +136,14 @@ ul {
 	margin: 10px;
 	display: flex;
 	justify-content: center;
-	z-index: 1;
+	z-index: 0;
 }
 
 .imgcontent img {
 	height: 60%;
-	width: 60%;
+	width: auto;
 	justify-content: center;
-	z-index: 2;
+	z-index: 1;
 }
 
 .imgcontent::before{
@@ -122,13 +155,17 @@ ul {
 	right: 20%;
     background: linear-gradient(45deg, #aca7a7, #F4F5F5);
 	animation: object1 6s linear infinite;
-	z-index: 0;
 }
 
 @keyframes object1{
     50%{
         right: 10%;
     }
+}
+
+footer {
+	border-top: solid 1px black;
+	width: 100%;
 }
 
 
