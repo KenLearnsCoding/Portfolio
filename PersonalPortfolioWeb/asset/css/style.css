@@ -1,0 +1,106 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* General styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #8BBD91;
+	height: 100vh;
+	display: grid;
+
+}
+/* General styles end */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.container {
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    justify-content: center;
+}
+.navBar {
+	color: #fff;
+	display: flex;
+	gap: 25px;
+    justify-content: space-between;
+	align-items: center;
+}
+
+img {
+    justify-content: left;
+    background-repeat: no-repeat;
+    height: auto;
+    width: auto;
+}
+
+.navItem{
+    justify-content: center;
+    display: flex;
+	padding: 5px;
+	margin: 5px;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	gap: 25px;
+}
+
+.link {
+	position: relative;
+	display: inline-block;
+	justify-content: center;
+}
+.link::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #fff;
+	border-radius: 4px;
+	scale: 0 1;
+	transform-origin: right;
+	transition: scale 0.25s;
+}
+.link:hover::before {
+	scale: 1;
+	transform-origin: left;
+}
+
+.contentSection {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    padding: 5px;
+ }
+
+.writtenContent {
+    padding: 5px;
+    display: block;
+	width: 50%;
+}
+
+.imgcontent{
+	position: relative; /* Make the container relative */
+	padding: 10px;
+	margin: 10px;
+	display: block;
+	justify-content: center;
+
+}
+
+.imgcontent img {
+	height: 70%;
+	width: auto;
+}
+
+
