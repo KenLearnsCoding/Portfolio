@@ -31,7 +31,7 @@ a {
     text-align: center;
     font-size: 50px;
     color: #fff;
-    margin: 10px;
+    margin: 10%;
     padding: 10px;
 }
 
@@ -42,6 +42,7 @@ a {
     justify-content: space-between;
 	align-items: center;
 	z-index: 1;
+    margin-bottom: 5%;
 }
 
 img {
@@ -89,7 +90,7 @@ ul {
 
 .video-container {
     width: 100%; /* Adjust the width as needed */
-    max-width: 30%; /* Set a maximum width if desired */
+    max-width: 90%; /* Set a maximum width if desired */
     margin: 0 auto; /* Center the video container */
     border-radius: 10px;
     box-shadow: 10px 10px #3F4042 ;
@@ -105,10 +106,10 @@ video {
 
 
 .biggestBox {
-    display: block;
     justify-content: space-around;
-    padding: 10%;
-    margin: 10px;
+    display:grid;
+    margin: 10%;
+    align-items: center;
 }
 
 .biggestBox h1 {
@@ -119,36 +120,45 @@ video {
     padding: 10px;
 }
 
-
 .card {
-    justify-content: center;
-    padding: 5%;
-    margin: 10%;
-    display: block;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* Make sure the element is a flex container to use justify-content and align-items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    padding: 5%; /* Adjust padding as needed */
+    margin: 10%; /* Adjust margin as needed */
+    flex-direction: column; /* Stack items vertically */
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 10px 10px #202021 ;
-    height: 500px;
+    box-shadow: 10px 10px #202021;
+    height: 500px; 
     width: 630px;
-    justify-content: space-between;
-
 }
 
+.card a, p{
+    margin: 2%;
+}
+
+
 .card img {
-    width: 30%;
-    height: 30%;
+    width: 50%;
+    height: 50%;
     border-radius: 10px;
+    margin: 5%;
 }
 
 .footerContent {
 	border-top: solid 1px black;
 	width: 100%;
 	display: flex;
-	height: auto;
+	height: 10%;
 	align-items: center;
 	justify-content: center;
+}
+.footerContent a {
+	margin: 10px;
+	padding: 10px;
+	color: #fff;
+
 }
 .footerContent p {
 	margin: 10px;
