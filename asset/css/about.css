@@ -1,5 +1,6 @@
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 /* General styles */
 * {
 	margin: 0;
@@ -27,6 +28,7 @@ a {
 }
 
 .container h1{
+	font-family: 'Lato', sans-serif;
     text-align: center;
     font-size: 50px;
     color: #fff;

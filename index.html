@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Ken">
+    <meta name="description" content="create portfolio website ">
+    <meta name="keywords" content="HTML, CSS, Js">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Portfolio Website</title>
     <link rel="stylesheet" href="./asset/css/style.css">
 </head>
 <body>
     <div class="container">
-        <header class="navBar">
+        <nav class="navBar">
             <img src="/Users/tienphatt/Github/Portfolio/asset/logo/logo.png" alt="">
-            <div class="navItem">
+            <div class="sideBar">
                 <ul>
+                    <li onclick=hideSidebar()>
+                        <a href="#" ><img src="/Users/tienphatt/Github/Portfolio/asset/img/close_FILL0_wght400_GRAD0_opsz24.png" alt=""></a>
+                    </li>
                     <li>
                         <a href="/Users/tienphatt/Github/Portfolio/index.html" class="link">Home</a>
                     </li>
@@ -24,9 +31,25 @@
                     <li>
                         <a href="/Users/tienphatt/Github/Portfolio/asset/pages/contact.html" class="link">Contact</a>
                     </li>
+                </ul><ul>
+                    <li>
+                        <a href="/Users/tienphatt/Github/Portfolio/index.html" class="link">Home</a>
+                    </li>
+                    <li>
+                        <a href="/Users/tienphatt/Github/Portfolio/asset/pages/portfolio.html" class="link">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="/Users/tienphatt/Github/Portfolio/asset/pages/about.html" class="link">About</a>
+                    </li>
+                    <li>
+                        <a href="/Users/tienphatt/Github/Portfolio/asset/pages/contact.html" class="link">Contact</a>
+                    </li>
+                    <li onclick=showSidebar()>
+                        <a href="#"><img src="" alt=""></a>
+                    </li>
                 </ul>
             </div>
-        </header>
+        </nav>
 
         <div class="contentSection">
             <div class="maincontent">
