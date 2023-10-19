@@ -9,7 +9,7 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #8BBD91;
-	height: 130vh;
+	height: auto;
 	display: grid;
 
 }
@@ -23,8 +23,11 @@ a {
 .container {
     padding: 10px;
     margin: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
     display: block;
     justify-content: center;
+    height: 100%;
 }
 
 .container h1{
@@ -88,69 +91,92 @@ ul {
 	transform-origin: left;
 }
 
-.video-container {
-    width: 100%; /* Adjust the width as needed */
-    max-width: 90%; /* Set a maximum width if desired */
-    margin: 0 auto; /* Center the video container */
-    border-radius: 10px;
-    box-shadow: 10px 10px #3F4042 ;
-    overflow: hidden;
-    
+/* Apply styles to the contact form */
+.contactSection{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 70%;
+    margin: 20px;
 }
 
-video {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Remove any extra spacing or borders */
+.contactSection h2 {
+    font-size: 24px;
+    color: black;
 }
 
+.contactSection p {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 20px;
+}
 
-.biggestBox {
-    justify-content: space-around;
-    display:grid;
-    margin: 8%;
+.information {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+    margin: 0 10px;
     align-items: center;
 }
 
-.biggestBox h1 {
-    text-align: center;
-    font-size: 50px;
-    color: black;
-    margin: 10px;
+.information img {
+    height: 20px;
+    width: 20px;
+}
+
+
+.information h2 {
+    margin-bottom: 10px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
     padding: 10px;
+
 }
 
-.card {
-    display: flex; /* Make sure the element is a flex container to use justify-content and align-items */
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    padding: 5%; /* Adjust padding as needed */
-    margin: 10%; /* Adjust margin as needed */
-    flex-direction: column; /* Stack items vertically */
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 10px 10px #202021;
-    height: 500px; 
-    width: 630px;
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
 }
 
-.card a, p{
-    margin: 2%;
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
 }
 
+textarea {
+    resize: vertical; /* Allow vertical resizing of textarea */
+}
 
-.card img {
-    width: 50%;
-    height: 50%;
-    border-radius: 10px;
-    margin: 5%;
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
 }
 
 .footerContent {
 	border-top: solid 1px black;
 	width: 100%;
 	display: flex;
-	height: 10%;
 	align-items: center;
 	justify-content: center;
     bottom: 0;
