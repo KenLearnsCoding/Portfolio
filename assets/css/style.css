@@ -10,61 +10,86 @@ body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #8BBD91;
 	height: 130vh;
-	display: grid;
 
 }
-/* General styles end */
+/* Nav bar */
 a {
 	text-decoration: none;
 	color: inherit;
 }
 
-.container {
-    padding: 10px;
-    margin: 10px;
-    display: block;
-    justify-content: center;
-}
 
-.container h1{
-    font-family: 'Lato', sans-serif;
-    text-align: center;
-    font-size: 50px;
-    color: #fff;
-    margin: 10%;
-    padding: 10px;
-}
-
-.navBar {
+nav {
 	color: #fff;
 	display: flex;
-	gap: 25px;
-    justify-content: space-between;
 	align-items: center;
-	z-index: 1;
-    margin-bottom: 5%;
-}
-
-img {
-    justify-content: left;
-    background-repeat: no-repeat;
-    height: auto;
-    width: auto;
-}
-
-.navItem{
-    justify-content: center;
-    display: flex;
-	padding: 5px;
-	margin: 5px;
+	gap: 25px;
+	margin: 10px;
+	justify-content: center;
+	height: 10%;
 }
 
 ul {
+	width: 100%;
 	list-style: none;
 	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 	gap: 25px;
 }
 
+li {
+	height: 50px;
+
+}
+
+nav a {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: inherit;
+	gap: 25px;
+}
+
+
+#closeSidebarButton {
+	display: none;
+}
+
+
+#openSidebarButton {
+	display: none;
+}
+
+
+.sideBar {
+	position: fixed;
+	top: 0; 
+	right: 0;
+	height: 100vh;
+	width: 250px;
+	z-index: 999;
+	background-color: rgb(55, 179, 203);
+	box-shadow: -10px 0 10px rgba(0,0,0, 0.1);
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+
+
+}
+
+.sideBar a {
+	width: 100%;
+	padding: 10px;
+	margin: 10px;
+}
+
+.menu-button {
+	display: none;
+}
+
+/* Make animation hover for buttons */
 .link {
 	position: relative;
 	display: inline-block;
@@ -89,6 +114,24 @@ ul {
 }
 
 
+/* Content section */
+.container {
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    justify-content: center;
+}
+
+img {
+    justify-content: left;
+    background-repeat: no-repeat;
+    height: auto;
+    width: auto;
+}
+
+
+
+/* This part is for the introduction content */
 .contentSection {
     display: flex;
     justify-content: space-around;
@@ -98,7 +141,7 @@ ul {
  }
 
 .mainContent {
-	padding: 5%;
+	padding: 0 5% 5% 0;
 	margin: 5px; /* Center the block horizontally */
 	height: 100%;
 	width: 50%;
@@ -114,7 +157,7 @@ ul {
 	left: 10%;
 	bottom: 10%;
     background: linear-gradient(45deg, #aca7a7, #F4F5F5);
-	z-index: 0;
+	z-index: 999;
 }
 
 
@@ -186,36 +229,38 @@ ul {
 	transform-origin: left;
  }
 
-.imgcontent{
+.imgContent{
 	position: relative; /* Make the container relative */
 	padding: 10px;
 	margin: 10px;
 	display: flex;
 	justify-content: center;
-	z-index: 0;
+	z-index: -1;
 }
 
-.imgcontent img {
+.imgContent img {
 	height: 60%;
 	width: auto;
 	justify-content: center;
 	z-index: 1;
 }
 
-.imgcontent::before{
+
+/* creating the ball and its animation */
+.imgContent::before{
     position: absolute;
     content: '';
     height: 500px;
     width: 500px;
     border-radius: 50%;
-	right: 20%;
+	right: 15%;
     background: linear-gradient(45deg, #aca7a7, #F4F5F5);
 	animation: object1 6s linear infinite;
 }
 
 @keyframes object1{
     50%{
-        right: 10%;
+        right: 40%;
     }
 }
 
@@ -246,59 +291,23 @@ ul {
 }
 
 
-    /* Add a media query for screens between 320px and 480px */
-@media screen and (min-width: 320px) and (max-width: 480px) {
-    .navBar {
-        display: block; /* Change to a vertical layout */
-    }
+/* Media query for smaller screens  */
+@media (max-width: 800px) {
+	.hideMobile {
+		display: none;
+	}
 
-    .navItem ul {
-        display: block; /* Change to a vertical layout */
-    }
+	.menu-button {
+		display: block;
+	}
 
-    .navItem ul li {
-        margin: 10px 0; /* Add spacing between navigation links */
-    }
+	.sideBar {
+		display: none;
+	}
+}
 
-    .contentSection {
-        flex-direction: column; /* Stack content in a column on smaller screens */
-    }
-
-    .maincontent {
-        width: 100%; /* Use full width on smaller screens */
-        margin: 0;
-    }
-
-    .maincontent::before {
-        display: none; /* Hide the circular background */
-    }
-
-    .writtenContent {
-        padding: 5%; /* Adjust padding for smaller screens */
-    }
-
-    .links {
-        width: 100%; /* Use full width on smaller screens */
-        margin: 0;
-    }
-
-    .linkButton {
-        margin: 10px 0; /* Add spacing between link buttons */
-    }
-
-    .imgcontent {
-        padding: 0; /* Remove padding on smaller screens */
-    }
-
-    .imgcontent img {
-        width: 100%; /* Use full width for images */
-    }
-
-    .imgcontent::before {
-        display: none; /* Hide the circular background */
-    }
-
-    .footerContent {
-        height: auto; /* Remove height restriction */
-    }
+@media (max-width: 400px) {
+	.sideBar {
+		width: 100%;
+	}
 }
