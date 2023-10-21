@@ -1,6 +1,8 @@
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* General styles */
+/* Viewport for small screen and laptop (768px - 1024px)*/
+/* Because i use my mac pro to build the default, and i dont have the big screen to work conveniently  */
 * {
 	margin: 0;
 	padding: 0;
@@ -10,7 +12,6 @@ body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #8BBD91;
 	height: 130vh;
-
 }
 /* Nav bar */
 a {
@@ -51,7 +52,7 @@ nav a {
 	gap: 25px;
 }
 
-
+/* line 55- 63 to hide the menu and close icon nav bar  in default mode*/
 #closeSidebarButton {
 	display: none;
 }
@@ -61,7 +62,7 @@ nav a {
 	display: none;
 }
 
-
+/* Side bar custom */
 .sideBar {
 	position: fixed;
 	top: 0; 
@@ -75,8 +76,6 @@ nav a {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
-
-
 }
 
 .sideBar a {
@@ -85,6 +84,7 @@ nav a {
 	margin: 10px;
 }
 
+/* hide menu button for responsive mode */
 .menu-button {
 	display: none;
 }
@@ -142,25 +142,22 @@ img {
 
 .mainContent {
 	padding: 0 5% 5% 0;
-	margin: 5px; /* Center the block horizontally */
+	margin: 5px; 
 	height: 100%;
 	width: 50%;
 
 }
-
+/* Create the ball  */
 .mainContent::before{
 	position: absolute;
 	content: '';
     height: 50px;
     width: 50px;
     border-radius: 50%;
-	left: 10%;
-	bottom: 10%;
     background: linear-gradient(45deg, #aca7a7, #F4F5F5);
 	z-index: 999;
 }
-
-
+/* written introduction */
  .writtenContent {
 	padding: 9%;
 	margin: 2%;
@@ -185,14 +182,13 @@ img {
     font-weight: bold;
     transition: background-color 0.3s ease; /* Add a smooth hover effect */
 }
-
+/* Call-action button custom */
 .cta-button:hover {
     background-color: #6000e6; /* Change the background color on hover */
 }
 
-
+/* Second call-action button custom */
  .links {
-
 	padding: 5px;
 	width: 40%;
 	margin: 10px; /* Center the block horizontally */
@@ -204,6 +200,7 @@ img {
 	align-items: center;
  }
 
+ /* custom for each call button action and animation as well  */
  .linkButton {
 	position: relative;
 	display: inline-block;
@@ -229,8 +226,9 @@ img {
 	transform-origin: left;
  }
 
+ /* image custom before importing */
 .imgContent{
-	position: relative; /* Make the container relative */
+	position: relative; 
 	padding: 10px;
 	margin: 10px;
 	display: flex;
@@ -264,6 +262,7 @@ img {
     }
 }
 
+/* Footer custom */
 .footerContent {
 	border-top: solid 1px black;
 	width: 100%;
@@ -291,18 +290,14 @@ img {
 }
 
 
-/* Media query for smaller screens  */
-/* @media (max-width: 800px) {
-	
-} */
-
-/* @media (max-width: 400px) {
-	.sideBar {
-	 
-	}
-} */
 /* Mobile and ipads */
-@media screen and (min-width: 400px ) and (max-width: 769px) {
+@media screen and (min-width: 400px ) and (max-width: 768px) {
+	
+	body {
+		width: auto;
+		height: auto;
+	} 
+	/* This is the hide and show of menu and nav bar */
 	.hideMobile {
 		display: none;
 	}
@@ -322,29 +317,22 @@ img {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
-		margin: 5px;
-		padding: 5px;
 		height: 90%;
+		width: auto;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.mainContent {
-		padding: 0 5% 5% 0;
-		margin: 5px; /* Center the block horizontally */
+		padding: 5%;
+		margin: 5px; 
 		height: 100%;
-		width: 50%;
-
+		width: 400px;
+		align-items: center;
 	}
-
+	/* The small ball */
 	.mainContent::before{
-		position: relative;
-		content: '';
-		height: 50px;
-		width: 50px;
-		border-radius: 50%;
-		left: 10%;
-		bottom: 10%;
-		background: linear-gradient(45deg, #aca7a7, #F4F5F5);
-		z-index: 999;
+		display: none;
 	}
 
 
@@ -352,26 +340,16 @@ img {
 		padding: 9%;
 		margin: 2%;
 		justify-content: center;
-		height: 50%; 
+		height: auto;
+		width: 100%;
 		z-index: 2;
 		align-items: center;
 	}
 
-	.writtenContent p {
-		margin: 3% 0px;
-	}
 
-	.imgContent{
-		position: relative; /* Make the container relative */
-		padding: 10px;
-		margin: 10px;
-		display: flex;
-		justify-content: center;
-		z-index: -1;
-	}
 	
 	.imgContent img {
-		height: 10%;
+		height: 300px;
 		width: auto;
 		justify-content: center;
 		z-index: 1;
@@ -379,14 +357,25 @@ img {
 	
 	/* creating the ball and its animation */
 	.imgContent::before{
-		position: absolute;
-		content: '';
 		height: 300px;
 		width: 300px;
 		border-radius: 50%;
 		right: 10%;
-		background: linear-gradient(45deg, #aca7a7, #F4F5F5);
-		animation: object1 6s linear infinite;
+	}
+
+	.footerContent {
+		border-top: solid 1px black;
+		width: auto;
+		display: sticky;
+		height: 10%;
+		align-items: center;
+		bottom: 0;
+	}
+	/* Close footer's buttons */
+	.footerLinks {
+		display: none;
 	}
 
 }
+
+

@@ -7,36 +7,54 @@
     <link rel="stylesheet" href="../css/projectStyle.css">
 </head>
 <body>
+     <!-- nav bar -->
+     <nav>
+        <img src="assets/logo/logo.png" alt="">
+        <!-- nav bar for big screen -->
+        <ul>
+            <li class="hideMobile">
+                <a href="../../index.html" class="link">Home</a>
+            </li>
+            <li class="hideMobile">
+                <a href="portfolio.html" class="link">Portfolio</a>
+            </li>
+            <li class="hideMobile">
+                <a href="about.html"  class="link">About</a>
+            </li>
+            <li class="hideMobile">
+                <a href="contact.html" class="link">Contact</a>
+            </li>
+            <li  class="menu-button" onclick= showSideBar() ><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+        <!-- nav bar for small screen -->
+        <ul class="sideBar">
+            <li onclick= hideSideBar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li>
+                <a href="../../index.html" class="link">Home</a>
+            </li>
+            <li>
+                <a href="portfolio.html" class="link">Portfolio</a>
+            </li>
+            <li>
+                <a href="about.html" class="link">About</a>
+            </li>
+            <li>
+                <a href="contact.html" class="link">Contact</a>
+            </li>
+            
+        </ul>
+    </nav>
+    <!-- content part -->
     <div class="container">
-        <header class="navBar">
-            <img src="../logo/logo.png" alt="picture">
-            <div class="navItem">
-                <ul>
-                    <li>
-                        <a href="../../index.html" class="link">Home</a>
-                    </li>
-                    <li>
-                        <a href="portfolio.html" class="link">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="about.html" class="link">About</a>
-                    </li>
-                    <li>
-                        <a href="contact.html" class="link">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </header>
-
-        
         <h1>LET ME COOK MY PORTFOLIO </h1>
-
+        <!-- video content -->
         <div class ="video-container">
             <video id="my-video" controls autoplay loop>
                 <source src="../video/video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
+        <!-- Box for projects -->
         <div class="biggestBox">
             <div class="card">
                 <img src="../img/bg.jpg" alt="">
@@ -50,7 +68,7 @@
             </div>
 
             <div class="card">
-                <img src="../img/istockphoto-953499010-1024x1024.jpg" alt="">
+                <img src="../img/blockchain.jpg" alt="">
                 <h3>Blockchain Backend</h3>
                 <p>Language used: NodeJS, ExpressJS, MongoDB</p>
                 <p>This project is created to aim the blockchain storage. How the transactions are stored 
@@ -62,17 +80,15 @@
             </div>
 
             <div class="card">
-                <img src="../img/Screenshot 2023-10-18 at 11.48.02 AM.png" alt="">
+                <img src="../img/clock.png" alt="">
                 <h3>Digital Clock</h3>
                 <p>Language used: Html, Css, Js</p>
                 <p>This project will show a digital clock website. It looks pretty nice to work with project, cause the real time event like this clock is fun to create.</p>
-                <a href="https://github.com/KenLearnsCoding/Practice/tree/main/Digital%20Clock" class="links">Github</a>
-                
+                <a href="https://github.com/KenLearnsCoding/Practice/tree/main/Digital%20Clock" class="links">Github</a>    
             </div>
-
-
         </div>
 
+        <!-- Footer -->
         <footer>
             <div class="footerContent">
                 <p>2023 © All Rights Reserve</p>
