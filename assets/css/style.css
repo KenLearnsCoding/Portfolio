@@ -292,7 +292,17 @@ img {
 
 
 /* Media query for smaller screens  */
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
+	
+} */
+
+/* @media (max-width: 400px) {
+	.sideBar {
+	 
+	}
+} */
+/* Mobile and ipads */
+@media screen and (min-width: 400px ) and (max-width: 769px) {
 	.hideMobile {
 		display: none;
 	}
@@ -303,11 +313,80 @@ img {
 
 	.sideBar {
 		display: none;
+		width: 30%;
+		height: 100%;
 	}
-}
 
-@media (max-width: 400px) {
-	.sideBar {
-		width: 100%;
+	/* This part is for the introduction content */
+	.contentSection {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		margin: 5px;
+		padding: 5px;
+		height: 90%;
 	}
+
+	.mainContent {
+		padding: 0 5% 5% 0;
+		margin: 5px; /* Center the block horizontally */
+		height: 100%;
+		width: 50%;
+
+	}
+
+	.mainContent::before{
+		position: relative;
+		content: '';
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+		left: 10%;
+		bottom: 10%;
+		background: linear-gradient(45deg, #aca7a7, #F4F5F5);
+		z-index: 999;
+	}
+
+
+	.writtenContent {
+		padding: 9%;
+		margin: 2%;
+		justify-content: center;
+		height: 50%; 
+		z-index: 2;
+		align-items: center;
+	}
+
+	.writtenContent p {
+		margin: 3% 0px;
+	}
+
+	.imgContent{
+		position: relative; /* Make the container relative */
+		padding: 10px;
+		margin: 10px;
+		display: flex;
+		justify-content: center;
+		z-index: -1;
+	}
+	
+	.imgContent img {
+		height: 10%;
+		width: auto;
+		justify-content: center;
+		z-index: 1;
+	}
+	
+	/* creating the ball and its animation */
+	.imgContent::before{
+		position: absolute;
+		content: '';
+		height: 300px;
+		width: 300px;
+		border-radius: 50%;
+		right: 10%;
+		background: linear-gradient(45deg, #aca7a7, #F4F5F5);
+		animation: object1 6s linear infinite;
+	}
+
 }
