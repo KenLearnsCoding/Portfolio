@@ -1,6 +1,8 @@
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* General styles */
+/* Viewport for small screen, laptop, desktop (768px - 1400px)*/
+/* Because i use my mac pro to build the default, and i dont have the big screen to work conveniently  */
 * {
 	margin: 0;
 	padding: 0;
@@ -9,65 +11,76 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #8BBD91;
-	height: auto;
-	display: grid;
-
+	height: 130vh;
 }
-
-/* General styles end */
+/* Nav bar */
 a {
 	text-decoration: none;
 	color: inherit;
 }
 
-.container {
-    padding: 10px;
-    margin: 10px;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    display: block;
-    justify-content: center;
-    height: 100%;
-}
 
-.container h1{
-    text-align: center;
-    font-size: 50px;
-    color: #fff;
-    margin: 10%;
-    padding: 10px;
-}
-
-.navBar {
+nav {
 	color: #fff;
 	display: flex;
-	gap: 25px;
-    justify-content: space-between;
 	align-items: center;
-	z-index: 1;
-    margin-bottom: 5%;
-}
-
-img {
-    justify-content: left;
-    background-repeat: no-repeat;
-    height: auto;
-    width: auto;
-}
-
-.navItem{
-    justify-content: center;
-    display: flex;
-	padding: 5px;
-	margin: 5px;
+	gap: 25px;
+	margin: 10px;
+	justify-content: center;
+	height: 10%;
 }
 
 ul {
+	width: 100%;
 	list-style: none;
 	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 	gap: 25px;
 }
 
+li {
+	height: 50px;
+
+}
+
+nav a {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: inherit;
+	gap: 25px;
+}
+
+
+/* Side bar custom */
+.sideBar {
+	position: fixed;
+	top: 0; 
+	right: 0;
+	height: 100vh;
+	width: 250px;
+	z-index: 999;
+	background-color: rgb(55, 179, 203);
+	box-shadow: -10px 0 10px rgba(0,0,0, 0.1);
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.sideBar a {
+	width: 100%;
+	padding: 10px;
+	margin: 10px;
+}
+
+/* hide menu button for responsive mode */
+.menu-button {
+	display: none;
+}
+
+/* Make animation hover for buttons */
 .link {
 	position: relative;
 	display: inline-block;
@@ -91,96 +104,92 @@ ul {
 	transform-origin: left;
 }
 
-/* Apply styles to the contact form */
-.contactSection{
-    text-align: center;
-    display: flex;
+/* content area */
+.container {
+    padding: 10px;
+    margin: 10px;
+    display: block;
     justify-content: center;
-    height: 70%;
-    margin: 20px;
 }
 
-.contactSection h2 {
-    font-size: 24px;
-    color: black;
+.container h1 {
+	text-align: center;
+	font-size: 50px;
+	color: #fff;
+	margin: 5%;
+	padding: 10px;
 }
 
-.contactSection p {
-    font-size: 16px;
-    color: black;
-    margin-bottom: 20px;
+.video-container {
+    width: 100%; /* Adjust the width as needed */
+    max-width: 90%; /* Set a maximum width if desired */
+    margin: 0 auto; /* Center the video container */
+    border-radius: 10px;
+    box-shadow: 10px 10px #3F4042 ;
+    overflow: hidden;
+    
 }
 
-.information {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding: 0 10px;
-    margin: 0 10px;
+video {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any extra spacing or borders */
+}
+
+
+.biggestBox {
+    justify-content: space-around;
+    display:flex;
+	flex-direction: column;
+    margin: 8%;
     align-items: center;
 }
 
-.information img {
-    height: 20px;
-    width: 20px;
-}
-
-
-.information h2 {
-    margin-bottom: 10px;
-}
-
-form {
-    max-width: 400px;
-    margin: 0 auto;
+.biggestBox h1 {
+    text-align: center;
+    font-size: 50px;
+    color: black;
+    margin: 10px;
     padding: 10px;
-
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 16px;
-    color: #333;
+.card {
+    display: flex; /* Make sure the element is a flex container to use justify-content and align-items */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    padding: 5%; /* Adjust padding as needed */
+    margin: 10% 0 10% 0; /* Adjust margin as needed */
+    flex-direction: column; /* Stack items vertically */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 10px 10px #202021;
+    height: 500px; 
+    width: 630px;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+.card a, p{
+    margin: 2%;
 }
 
-textarea {
-    resize: vertical; /* Allow vertical resizing of textarea */
+
+.card img {
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    margin: 5%;
 }
 
-input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-input[type="submit"]:hover {
-    background-color: #555;
-}
-
+/* Footer custom */
 .footerContent {
 	border-top: solid 1px black;
 	width: 100%;
 	display: flex;
+	height: 10%;
 	align-items: center;
 	justify-content: center;
     bottom: 0;
 }
+
 .footerContent a {
 	margin: 10px;
 	padding: 10px;
@@ -196,3 +205,133 @@ input[type="submit"]:hover {
 	margin: 10px;
 	padding: 10px;
 }
+
+
+/* Mobile and ipads */
+@media screen and (min-width: 320px ) and (max-width: 768px) {
+	
+	body {
+		width: auto;
+		height: auto;
+	} 
+
+	/* This is the hide and show of menu and nav bar */
+	.hideMobile {
+		display: none;
+	}
+
+	.menu-button {
+		display: block;
+	}
+
+	.sideBar {
+		display: none;
+		width: 30%;
+		height: 100%;
+	}
+
+	.biggestBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.card {
+		display: flex; /* Make sure the element is a flex container to use justify-content and align-items */
+		justify-content: center; /* Center items horizontally */
+		align-items: center; /* Center items vertically */
+		flex-direction: column; /* Stack items vertically */
+		background-color: #fff;
+		border-radius: 10px;
+		box-shadow: 10px 10px #202021;
+		height: auto; 
+		width: auto;
+	}
+	
+	.card a, p{
+		margin: 2%;
+	}
+	
+	
+	.card img {
+		width: 50%;
+		height: 50%;
+		border-radius: 10px;
+	}
+	
+	
+
+	.footerContent {
+		border-top: solid 1px black;
+		width: auto;
+		display: sticky;
+		height: 10%;
+		align-items: center;
+		bottom: 0;
+	}
+	/* Close footer's buttons */
+	.footerLinks {
+		display: none;
+	}
+}
+
+/*  Extra large screen*/
+@media screen and (min-width: 1440px) and (max-width: 2560px){
+	.container h1 {
+		font-size: 200px;
+	}
+
+	/* navigator modification */
+	nav img {
+		width: 200px;
+		height: auto;
+	}
+
+	nav a {
+		font-size: 30px;
+	}
+
+	/* card modification */
+	.card {
+		height: 800px; 
+		width: 800px;
+	}
+
+	.card h3 {
+		font-size: 30px;
+	}
+
+	.card p, a {
+		font-size: 25px;
+	}
+
+	/* Footer custom */
+	.footerContent {
+		border-top: solid 1px black;
+		width: 100%;
+		display: flex;
+		height: 10%;
+		align-items: center;
+		justify-content: center;
+		bottom: 0;
+	}
+
+	.footerContent a {
+		margin: 10px;
+		padding: 10px;
+		color: #fff;
+
+	}
+	.footerContent p {
+		font-size: 25px;
+		margin: 10px;
+		padding: 10px;
+	}
+
+	.footerLinks{
+		align-items: center;
+	}
+
+}
+
+
