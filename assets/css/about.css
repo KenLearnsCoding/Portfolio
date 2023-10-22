@@ -1,6 +1,8 @@
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* General styles */
+/* Viewport for small screen, laptop, desktop (768px - 1400px)*/
+/* Because i use my mac pro to build the default, and i dont have the big screen to work conveniently  */
 * {
 	margin: 0;
 	padding: 0;
@@ -10,59 +12,75 @@ body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #8BBD91;
 	height: 130vh;
-	display: grid;
-
 }
-/* General styles end */
+/* Nav bar */
 a {
 	text-decoration: none;
 	color: inherit;
 }
 
-.container {
-    padding: 10px;
-    margin: 10px;
-    display: block;
-    justify-content: center;
-}
 
-.container h1{
-    text-align: center;
-    font-size: 50px;
-    color: #fff;
-    margin: 5%;
-    padding: 10px;
-}
-
-.navBar {
+nav {
 	color: #fff;
 	display: flex;
-	gap: 25px;
-    justify-content: space-between;
 	align-items: center;
-	z-index: 1;
-}
-
-img {
-    justify-content: left;
-    background-repeat: no-repeat;
-    height: auto;
-    width: auto;
-}
-
-.navItem{
-    justify-content: center;
-    display: flex;
-	padding: 5px;
-	margin: 5px;
+	gap: 25px;
+	margin: 10px;
+	justify-content: center;
+	height: 10%;
 }
 
 ul {
+	width: 100%;
 	list-style: none;
 	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 	gap: 25px;
 }
 
+li {
+	height: 50px;
+
+}
+
+nav a {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: inherit;
+	gap: 25px;
+}
+
+
+/* Side bar custom */
+.sideBar {
+	position: fixed;
+	top: 0; 
+	right: 0;
+	height: 100vh;
+	width: 250px;
+	z-index: 999;
+	background-color: rgb(55, 179, 203);
+	box-shadow: -10px 0 10px rgba(0,0,0, 0.1);
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.sideBar a {
+	width: 100%;
+	padding: 10px;
+	margin: 10px;
+}
+
+/* hide menu button for responsive mode */
+.menu-button {
+	display: none;
+}
+
+/* Make animation hover for buttons */
 .link {
 	position: relative;
 	display: inline-block;
@@ -86,6 +104,24 @@ ul {
 	transform-origin: left;
 }
 
+/* content area */
+.container {
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    justify-content: center;
+}
+
+.container h1 {
+	text-align: center;
+	font-size: 50px;
+	color: #fff;
+	margin: 5%;
+	padding: 10px;
+}
+
+/* introduction section */
+
 .introduction {
 	margin: 10px;
 	padding: 10px;
@@ -102,7 +138,8 @@ ul {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin: 0 10% 0 5%;
+	align-items: center;
+	margin: 0 5% 0 5%;
 	padding: 10px;
 }
 
@@ -129,12 +166,7 @@ ul {
     width: 630px;
 }
 
-
-
-
-
-
-
+/* Skill content */
 .skills {
 	display: flex;
 	grid-template-columns: repeat(3. 1fr);
@@ -202,4 +234,134 @@ ul {
 	margin: 10px;
 	padding: 10px;
 }
+
+/* Mobile and ipads */
+@media screen and (min-width: 320px ) and (max-width: 768px) {
+	body {
+		width: auto;
+		height: auto;
+	} 
+
+	/* This is the hide and show of menu and nav bar */
+	.hideMobile {
+		display: none;
+	}
+
+	.menu-button {
+		display: block;
+	}
+
+	.sideBar {
+		display: none;
+		width: 30%;
+		height: 100%;
+	}
+
+	/* Reverse contents' order in introduction */
+	.introduction {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	/* change the box margin and padding for the profile */
+	.imgBox {
+		border: 10px solid #fff;
+	}
+
+	/* change bio font size */
+	.bio h3 {
+		margin: 10px;
+		padding: 10px;
+	}
+	
+	/* Change skill pic grid and resize skill images */
+	.skills {
+		display: flex;
+		flex-direction: column;
+	}
+	.skills img {
+		width: 50px;
+		height: 50px;
+	}
+
+	.skills h3 {
+		font-size: 1rem;
+	}
+	
+	.footerContent {
+		border-top: solid 1px black;
+		width: auto;
+		display: sticky;
+		height: 10%;
+		align-items: center;
+		bottom: 0;
+	}
+	/* Close footer's buttons */
+	.footerLinks {
+		display: none;
+	}
+}
+
+/*  Extra large screen*/
+@media screen and (min-width: 1440px) and (max-width: 2560px){
+	.container h1 {
+		font-size: 150px;
+	}
+
+	/* navigator modification */
+	nav img {
+		width: 200px;
+		height: auto;
+	}
+
+	nav a {
+		font-size: 30px;
+	}
+
+	/* change bio's font size */
+	.bio h3{
+		font-size: 40px;
+	}
+
+	.bio p{
+		font-size: 30px;
+	}
+
+	/* Change skills img size */
+	.skills img {
+		width: 100px;
+		height: 100px;
+	}
+
+	/* Footer custom */
+	.footerContent {
+		border-top: solid 1px black;
+		width: 100%;
+		display: flex;
+		height: 10%;
+		align-items: center;
+		justify-content: center;
+		bottom: 0;
+	}
+
+	.footerContent a {
+		margin: 10px;
+		padding: 10px;
+		color: #fff;
+		font-size: 25px;
+	}
+	.footerContent p {
+		font-size: 25px;
+		margin: 10px;
+		padding: 10px;
+	}
+
+	.footerLinks{
+		align-items: center;
+	}
+
+}
+
+
+
 

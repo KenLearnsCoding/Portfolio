@@ -120,6 +120,7 @@ nav a {
 	padding: 10px;
 }
 
+/* video section */
 .video-container {
     width: 100%; /* Adjust the width as needed */
     max-width: 90%; /* Set a maximum width if desired */
@@ -136,7 +137,7 @@ video {
     display: block; /* Remove any extra spacing or borders */
 }
 
-
+/* Mother box for the cards containing projects */
 .biggestBox {
     justify-content: space-around;
     display:flex;
@@ -153,6 +154,7 @@ video {
     padding: 10px;
 }
 
+/* card for projects' content */
 .card {
     display: flex; /* Make sure the element is a flex container to use justify-content and align-items */
     justify-content: center; /* Center items horizontally */
@@ -278,7 +280,7 @@ video {
 /*  Extra large screen*/
 @media screen and (min-width: 1440px) and (max-width: 2560px){
 	.container h1 {
-		font-size: 200px;
+		font-size: 150px;
 	}
 
 	/* navigator modification */
