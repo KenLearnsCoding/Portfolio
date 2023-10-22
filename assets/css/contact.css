@@ -1,6 +1,8 @@
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* General styles */
+/* Viewport for small screen, laptop, desktop (768px - 1200px)*/
+/* Because i use my mac pro to build the default, and i dont have the big screen to work conveniently  */
 * {
 	margin: 0;
 	padding: 0;
@@ -9,65 +11,75 @@
 body {
 	font-family: 'Poppins', sans-serif;
 	background-color: #8BBD91;
-	height: auto;
-	display: grid;
-
+	height: 130vh;
 }
-
-/* General styles end */
+/* Nav bar */
 a {
 	text-decoration: none;
 	color: inherit;
 }
 
-.container {
-    padding: 10px;
-    margin: 10px;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    display: block;
-    justify-content: center;
-    height: 100%;
-}
-
-.container h1{
-    text-align: center;
-    font-size: 50px;
-    color: #fff;
-    margin: 10%;
-    padding: 10px;
-}
-
-.navBar {
+nav {
 	color: #fff;
 	display: flex;
-	gap: 25px;
-    justify-content: space-between;
 	align-items: center;
-	z-index: 1;
-    margin-bottom: 5%;
-}
-
-img {
-    justify-content: left;
-    background-repeat: no-repeat;
-    height: auto;
-    width: auto;
-}
-
-.navItem{
-    justify-content: center;
-    display: flex;
-	padding: 5px;
-	margin: 5px;
+	gap: 25px;
+	margin: 10px;
+	justify-content: center;
+	height: 10%;
 }
 
 ul {
+	width: 100%;
 	list-style: none;
 	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 	gap: 25px;
 }
 
+li {
+	height: 50px;
+
+}
+
+nav a {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	color: inherit;
+	gap: 25px;
+}
+
+
+/* Side bar custom */
+.sideBar {
+	position: fixed;
+	top: 0; 
+	right: 0;
+	height: 100vh;
+	width: 250px;
+	z-index: 999;
+	background-color: rgb(55, 179, 203);
+	box-shadow: -10px 0 10px rgba(0,0,0, 0.1);
+	display: none;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+.sideBar a {
+	width: 100%;
+	padding: 10px;
+	margin: 10px;
+}
+
+/* hide menu button for responsive mode */
+.menu-button {
+	display: none;
+}
+
+/* Make animation hover for buttons */
 .link {
 	position: relative;
 	display: inline-block;
@@ -90,6 +102,24 @@ ul {
 	scale: 1;
 	transform-origin: left;
 }
+
+/* content area */
+.container {
+    padding: 10%;
+    margin: 10px 10px 10% 10px;
+    display: block;
+    justify-content: center;
+    height: 80%;
+}
+
+.container h1 {
+	text-align: center;
+	font-size: 50px;
+	color: #fff;
+	margin: 5%;
+	padding: 10px;
+}
+
 
 /* Apply styles to the contact form */
 .contactSection{
@@ -130,6 +160,7 @@ ul {
     margin-bottom: 10px;
 }
 
+/* form custom */
 form {
     max-width: 400px;
     margin: 0 auto;
@@ -137,13 +168,7 @@ form {
 
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 16px;
-    color: #333;
-}
-
+/* I learn this square input from online. They are used for what type of input */
 input[type="text"],
 input[type="email"],
 textarea {
@@ -173,10 +198,14 @@ input[type="submit"]:hover {
     background-color: #555;
 }
 
+
+
+/* footer custom */
 .footerContent {
 	border-top: solid 1px black;
 	width: 100%;
 	display: flex;
+	height: 10%;
 	align-items: center;
 	justify-content: center;
     bottom: 0;
@@ -195,4 +224,129 @@ input[type="submit"]:hover {
 .footerLinks {
 	margin: 10px;
 	padding: 10px;
+}
+
+/* Phone, ipad, tablet viewport */
+@media screen and (min-width: 320px ) and (max-width: 768px) {
+	body {
+		width: auto;
+		height: auto;
+	} 
+
+	/* This is the hide and show of menu and nav bar */
+	.hideMobile {
+		display: none;
+	}
+
+	.menu-button {
+		display: block;
+	}
+
+	.sideBar {
+		display: none;
+		width: 30%;
+		height: 100%;
+	}
+    
+    /* change information box's p margin */
+    .information p {
+        margin: 8%;
+    }
+
+    /* change Form box margin */
+    form {
+        margin: 10%;
+    }
+
+    /* change content display */
+    .contactSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+	
+	.footerContent {
+		border-top: solid 1px black;
+		width: auto;
+		display: sticky;
+		height: 10%;
+		align-items: center;
+		bottom: 0;
+	}
+	/* Close footer's buttons */
+	.footerLinks {
+		display: none;
+	}
+}
+
+/*  Desktop, Large screen and Extra large screen*/
+@media screen and (min-width: 1201px) and (max-width: 2560px){ 
+    .container h1 {
+		font-size: 150px;
+	}
+
+	/* navigator modification */
+	nav img {
+		width: 250px;
+		height: auto;
+	}
+
+	nav a {
+		font-size: 30px;
+	}
+
+    /* change h2 of information box */
+    .information h2 {
+        font-size: 40px;
+    }
+
+    /* change p of information box */
+    .information p {
+        font-size: 30px;
+    }
+    /* Change linkedin icon size */
+    .information img {
+        height: 40px;
+        width: 40px;
+    }
+
+    /* change size and font size of form*/
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 30px;
+    }
+
+    input[type="submit"] {
+        font-size: 30px;
+    }
+
+    /* Footer custom */
+	.footerContent {
+		border-top: solid 1px black;
+		width: 100%;
+		display: flex;
+		height: 10%;
+		align-items: center;
+		justify-content: center;
+		bottom: 0;
+	}
+
+	.footerContent a {
+		margin: 10px;
+		padding: 10px;
+		color: #fff;
+		font-size: 25px;
+	}
+	.footerContent p {
+		font-size: 25px;
+		margin: 10px;
+		padding: 10px;
+	}
+
+	.footerLinks{
+		align-items: center;
+	}
+
 }

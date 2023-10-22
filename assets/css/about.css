@@ -1,7 +1,7 @@
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 /* General styles */
-/* Viewport for small screen, laptop, desktop (768px - 1400px)*/
+/* Viewport for small screen, laptop(768px - 1200px)*/
 /* Because i use my mac pro to build the default, and i dont have the big screen to work conveniently  */
 * {
 	margin: 0;
@@ -18,7 +18,6 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
-
 
 nav {
 	color: #fff;
@@ -209,7 +208,7 @@ nav a {
 }
 
 
-
+/* footer */
 .footerContent {
 	border-top: solid 1px black;
 	width: 100%;
@@ -302,15 +301,15 @@ nav a {
 	}
 }
 
-/*  Extra large screen*/
-@media screen and (min-width: 1440px) and (max-width: 2560px){
+/*  Desktop, Large screen and Extra large screen*/
+@media screen and (min-width: 1201px) and (max-width: 2560px){
 	.container h1 {
 		font-size: 150px;
 	}
 
 	/* navigator modification */
 	nav img {
-		width: 200px;
+		width: 250px;
 		height: auto;
 	}
 

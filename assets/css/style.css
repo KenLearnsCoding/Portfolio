@@ -378,7 +378,7 @@ img {
 /*  Extra large screen*/
 @media screen and (min-width: 1440px) and (max-width: 2560px){
 	.container h1 {
-		font-size: 200px;
+		font-size: 100px;
 	}
 
 	/* navigator modification */
@@ -401,7 +401,7 @@ img {
 	}
 	/* introduction */
 	.writtenContent {
-		height: 65%; 
+		height: 70%; 
 		padding: 5% 5% 0 5%;
 	 }
 	
