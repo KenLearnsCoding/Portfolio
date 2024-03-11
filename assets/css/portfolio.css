@@ -165,7 +165,7 @@ video {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 10px 10px #202021;
-    height: 500px; 
+    height: auto; 
     width: 630px;
 }
 
@@ -175,8 +175,8 @@ video {
 
 
 .card img {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
     margin: 5%;
 }

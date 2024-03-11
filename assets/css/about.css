@@ -302,14 +302,14 @@ nav a {
 }
 
 /*  Desktop, Large screen and Extra large screen*/
-@media screen and (min-width: 1201px) and (max-width: 2560px){
+@media screen and (min-width: 1440px) and (max-width: 2560px){
 	.container h1 {
-		font-size: 150px;
+		font-size: 100px;
 	}
 
 	/* navigator modification */
 	nav img {
-		width: 250px;
+		width: 200px;
 		height: auto;
 	}
 
